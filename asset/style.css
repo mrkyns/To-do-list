@@ -16,10 +16,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  --background: #f1f1f1;
-  --bg_input: #fff;
+  --background: #d0d8da;
+  --bg_input: #e0e8e9;
   --txt: #404040;
-  --green: #acd51f;
+  --green: #4879b1;
   --shadow: #c9c9c9;
   --glas: rgba(255, 255, 255, 0.2);
 }
@@ -37,7 +37,7 @@ body {
   --background: #404040;
   --bg_input: #303030;
   --txt: #fff;
-  --green: #acd51f;
+  --green: #51b385;
   --shadow: #1b1b1b;
   --glas: rgba(0, 0, 0, 0.2);
 }
@@ -203,6 +203,11 @@ select {
 
 @media (max-width: 576px) {
   body {
+    height: auto;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+  .dark_mod {
     height: auto;
     align-items: flex-start;
     padding-top: 20px;

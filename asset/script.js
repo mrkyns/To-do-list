@@ -141,3 +141,17 @@ function removeLocalTodos(todo) {
   todos.splice(todos.indexOf(todoIndex), 1);
   localStorage.setItem("todos", JSON.stringify(todos));
 }
+
+// Switch light and dark mode
+
+const toggleBtn = document.getElementById("toggle_btn");
+const icon = document.getElementById("icon");
+
+toggleBtn.onclick = function () {
+  document.body.classList.toggle("dark_mod");
+  if (document.body.classList.contains("dark_mod")) {
+    icon.className = "fas fa-sun";
+  } else {
+    icon.className = "fas fa-moon";
+  }
+};

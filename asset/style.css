@@ -16,6 +16,30 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  --background: #f1f1f1;
+  --bg_input: #fff;
+  --txt: #404040;
+  --green: #acd51f;
+  --shadow: #c9c9c9;
+  --glas: rgba(255, 255, 255, 0.2);
+}
+
+.dark_mod {
+  background-image: url(./images/night_bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --background: #404040;
+  --bg_input: #303030;
+  --txt: #fff;
+  --green: #acd51f;
+  --shadow: #1b1b1b;
+  --glas: rgba(0, 0, 0, 0.2);
 }
 
 .container {
@@ -25,7 +49,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-shadow: 2px 2px 5px #c9c9c9;
+  box-shadow: 2px 2px 5px var(--shadow);
 }
 
 header {
@@ -35,16 +59,16 @@ header {
   align-items: center;
   gap: 15px;
   padding: 50px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--glas);
 }
 
 header svg {
   width: 40px;
-  fill: #acd51f;
+  fill: var(--green);
 }
 
 header h1 {
-  color: #404040;
+  color: var(--txt);
   font-size: 2rem;
 }
 
@@ -55,7 +79,7 @@ form {
   align-items: center;
   flex-wrap: wrap;
   padding: 20px;
-  background: #f1f1f1;
+  background: var(--background);
 }
 
 form input,
@@ -63,18 +87,18 @@ form button {
   padding: 0.9rem;
   font-size: 1rem;
   border: none;
-  background-color: #fff;
+  background-color: var(--bg_input);
 }
 
 form button {
-  color: #acd51f;
-  background: #fff;
+  color: var(--bg_input);
+  background: var(--green);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 form button:hover {
-  color: #fff;
-  background: #acd51f;
+  color: var(--green);
+  background: var(--bg_input);
 }
 
 .todo_container {
@@ -83,7 +107,7 @@ form button:hover {
   justify-content: center;
   align-items: center;
   padding-bottom: 20px;
-  background: #f1f1f1;
+  background: var(--background);
 }
 
 .todo_list {
@@ -94,8 +118,8 @@ form button:hover {
 
 .todo {
   margin: 0.5rem;
-  background: #fff;
-  color: #404040;
+  background: var(--bg_input);
+  color: var(--txt);
   font-size: 1.1rem;
   display: flex;
   justify-content: space-between;
@@ -109,8 +133,19 @@ form button:hover {
 
 .trash_btn,
 .complete_btn {
-  background-color: #acd51f;
+  background-color: var(--green);
   color: #fff;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.trash_btn:hover,
+.complete_btn:hover {
+  background-color: var(--bg_input);
+  color: var(--green);
   border: none;
   padding: 1rem;
   cursor: pointer;
@@ -119,6 +154,11 @@ form button:hover {
 
 .trash_btn {
   background-color: #cc1e1e;
+  transition: all 0.3s ease;
+}
+
+.trash_btn:hover {
+  color: #cc1e1e;
 }
 
 .todo_item {
@@ -154,10 +194,11 @@ select {
   overflow: hidden;
 }
 select {
-  color: #404040;
+  color: var(--txt);
   width: 10rem;
   cursor: pointer;
   padding: 1rem;
+  background-color: var(--bg_input);
 }
 
 @media (max-width: 576px) {
@@ -174,8 +215,8 @@ select {
 .select::after {
   content: "\25BC";
   position: absolute;
-  background-color: #acd51f;
-  color: #fff;
+  background-color: var(--green);
+  color: var(--bg_input);
   top: 0;
   right: 0;
   padding: 1rem;
@@ -184,6 +225,40 @@ select {
 }
 
 .select:hover::after {
-  background-color: #fff;
-  color: #acd51f;
+  background-color: var(--bg_input);
+  color: var(--green);
+}
+
+.toggle_mode {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: -50px;
+}
+
+.light,
+.dark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 35px;
+  background-color: var(--background);
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 5px;
+  color: var(--txt);
+}
+
+.light:hover,
+.dark:hover {
+  background-color: var(--green);
+  color: var(--bg_input);
+}
+
+.light.active,
+.dark.active {
+  display: none;
 }
